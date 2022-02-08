@@ -5,7 +5,7 @@ namespace ElevVPNBlazorWebsite.Pages.Dashboard
 {
     public partial class LoginPage
     {
-        private LoginModel _loginModel = new();
+        private readonly LoginModel _loginModel = new();
 
         private Task OnValidSubmit_LoginAdmin()
         {
