@@ -1,4 +1,8 @@
+using ElevVPNClassLibrary.Core.Database.Managers;
 using ElevVPNClassLibrary.Core.Settings;
+using ElevVPNClassLibrary.Extensions.ServiceCollection;
+using ElevVPNClassLibrary.Security.Cryptography;
+using ElevVPNClassLibrary.Security.Cryptography.Hashing;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -24,6 +28,17 @@ namespace ElevVPNBlazorWebsite
 
             services.AddRazorPages();
             services.AddServerSideBlazor();
+
+            services.AddSingleton<IConnectionSettings>(connectionSettings);
+
+            services.AddFactories();
+
+            services.AddManagers();
+
+            services.AddRepositories();
+
+            services.AddEntityServices();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
