@@ -5,14 +5,16 @@
 
     <EditForm Model="_requestModel" OnValidSubmit="OnValidSubmit_AddRequestEmail">
 
+        <DataAnnotationsValidator/>
+
         <div class="form-group">
             <label for="inputPassword" class="admin-label">Din ZBC Email:</label>
             <input id="inputPassword" type="password" class="form-control form-control-sm" placeholder="Indtast Email.." @bind="_requestModel.Email" />
             <ValidationMessage For="@(() => _requestModel.Email)" />
         </div>
 
-        <button type="submit" class="btn btn-outline-primary mt-2" disabled="@isProccessingVPNRequest">
-            if(isProccesingVPNRequest)
+        <button type="submit" class="btn btn-outline-primary mt-2" disabled="@_requestModel.IsProccessing">
+            @if(_requestModel.IsProccessing)
             {
                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                 <span>Sender anmodning...</span>
@@ -21,27 +23,7 @@
             {
                 <span>Send Anmodning</span>
             }
-
-
         </button>
 
     </EditForm>
 </div>
-
-
-
-@*<h1 Style="text-align:left; background-color:black; color:white; font-family:sans-serif;">ZBC ELEV VPN </h1>
-
-
-
-    <p Style="text-align:center; position:relative; top:320px; font-size:120%; font-family:sans-serif" >Indtast din ZBC mail adresse:</p>
-
-
-    <form>
-    <input type="email" class="email" placeholder=”elev@zbc.dk” Style="text-align:center; position:relative; top:320px; font-size:110%;">
-    <br/>
-    <input type="submit" name="Submit" value="Anmod" Style="background-color:black; color:white; text-align:center; position:relative; top:335px; font-size:110%;" />
-
-    </form>
-*@
-

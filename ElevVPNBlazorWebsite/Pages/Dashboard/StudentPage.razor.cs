@@ -6,8 +6,7 @@ namespace ElevVPNBlazorWebsite.Pages.Dashboard
     public partial class StudentPage
     {
 
-        private RequestModel _requestModel;
-
+        private RequestModel _requestModel = new();
 
 
         private Task OnValidSubmit_AddRequestEmail()

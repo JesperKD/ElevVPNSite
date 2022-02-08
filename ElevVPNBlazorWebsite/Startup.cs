@@ -1,3 +1,4 @@
+using ElevVPNClassLibrary.Core.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -19,6 +20,8 @@ namespace ElevVPNBlazorWebsite
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            var connectionSettings = Configuration.GetSection("JobAgent:DB").Get<DbConnectionSettings>();
+
             services.AddRazorPages();
             services.AddServerSideBlazor();
         }
