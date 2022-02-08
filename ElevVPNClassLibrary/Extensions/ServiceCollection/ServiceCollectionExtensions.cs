@@ -26,5 +26,5 @@ namespace ElevVPNClassLibrary.Extensions.ServiceCollection
             => services
            .AddSingleton<ISqlDbManager, SqlDbManager>()
            .AddTransient<ICryptographyService, HashingService>();
-    }|
+    }
 }
