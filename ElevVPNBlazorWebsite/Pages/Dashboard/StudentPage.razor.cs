@@ -11,12 +11,12 @@ namespace ElevVPNBlazorWebsite.Pages.Dashboard
 
         private Task OnValidSubmit_AddRequestEmail()
         {
-            _requestModel.IsProccessing = true;
+            _requestModel.IsProcessing = true;
 
 
 
 
-            _requestModel.IsProccessing = false;
+            _requestModel.IsProcessing = false;
             return Task.CompletedTask;
         }
 

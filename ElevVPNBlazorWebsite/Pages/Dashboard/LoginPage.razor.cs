@@ -9,10 +9,10 @@ namespace ElevVPNBlazorWebsite.Pages.Dashboard
 
         private Task OnValidSubmit_LoginAdmin()
         {
-            _loginModel.IsProccessing = true;
+            _loginModel.IsProcessing = true;
 
 
-            _loginModel.IsProccessing = false;
+            _loginModel.IsProcessing = false;
             return Task.CompletedTask;
         }
     }

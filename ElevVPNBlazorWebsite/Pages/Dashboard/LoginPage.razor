@@ -18,9 +18,9 @@
             <InputText @bind-Value="@_loginModel.Password" class="form-control" type="password" placeholder="Password" />
             <ValidationMessage For="@(() => _loginModel.Password)" />
         </div>
-        <button type="submit" class="btn btn-outline-light btn-sm" disabled="@_loginModel.IsProccessing">
+        <button type="submit" class="btn btn-outline-light btn-sm" disabled="@_loginModel.IsProcessing">
 
-            @if (_loginModel.IsProccessing)
+            @if (_loginModel.IsProcessing)
             {
                 <div class="d-flex align-items-center">
                     <span>Logger ind...</span>
@@ -33,8 +33,5 @@
             }
 
         </button>
-
-
     </EditForm>
-
 </div>

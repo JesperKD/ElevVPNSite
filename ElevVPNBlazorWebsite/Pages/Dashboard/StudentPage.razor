@@ -15,8 +15,8 @@
             <ValidationMessage For="@(() => _requestModel.Email)" />
         </div>
 
-        <button type="submit" class="btn btn-outline-primary mt-2" disabled="@_requestModel.IsProccessing">
-            @if(_requestModel.IsProccessing)
+        <button type="submit" class="btn btn-outline-primary mt-2" disabled="@_requestModel.IsProcessing">
+            @if(_requestModel.IsProcessing)
             {
                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                 <span>Sender anmodning...</span>
