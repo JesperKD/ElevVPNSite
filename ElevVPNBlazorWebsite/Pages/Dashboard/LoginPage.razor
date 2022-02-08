@@ -1,5 +1,40 @@
-﻿<h3>LoginPage</h3>
+﻿@page "/Admin/Login"
 
-@code {
+<PageDocumentTitle DocumentTitle="Admin - Login" />
 
-}
+<div class="page-content p-4">
+    <PageHeadingTitle DisplayTitle="Log ind" />
+
+    <EditForm Model="_loginModel" OnValidSubmit="OnValidSubmit_LoginAdmin">
+        <DataAnnotationsValidator />
+
+        <div class="mb-3">
+            <label for="dropdownProfileEmail" class="form-label">Email address</label>
+            <InputText @bind-Value="@_loginModel.Email" class="form-control" type="email" placeholder="email@example.com" />
+            <ValidationMessage For="@(() => _loginModel.Email)" />
+        </div>
+        <div class="mb-3">
+            <label for="dropdownProfilePassword" class="form-label">Password</label>
+            <InputText @bind-Value="@_loginModel.Password" class="form-control" type="password" placeholder="Password" />
+            <ValidationMessage For="@(() => _loginModel.Password)" />
+        </div>
+        <button type="submit" class="btn btn-outline-light btn-sm" disabled="@_loginModel.IsProccessing">
+
+            @if (_loginModel.IsProccessing)
+            {
+                <div class="d-flex align-items-center">
+                    <span>Logger ind...</span>
+                    <div class="spinner-border spinner-border-sm text-warning m-2 me-auto"></div>
+                </div>
+            }
+            else
+            {
+                <span>Log ind</span>
+            }
+
+        </button>
+
+
+    </EditForm>
+
+</div>
