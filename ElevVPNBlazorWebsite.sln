@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElevVPNBlazorWebsite", "ElevVPNBlazorWebsite\ElevVPNBlazorWebsite.csproj", "{C31A4D61-802D-49E7-B571-B81AFA4835BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElevVPNClassLibrary", "ElevVPNClassLibrary\ElevVPNClassLibrary.csproj", "{F8DF2D44-EB1F-4D95-AA5D-377D8E3274A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElevVPNClassLibrary", "ElevVPNClassLibrary\ElevVPNClassLibrary.csproj", "{F8DF2D44-EB1F-4D95-AA5D-377D8E3274A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
