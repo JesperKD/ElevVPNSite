@@ -1,6 +1,7 @@
 ﻿using ElevVPNClassLibrary.Common.Users.Factories;
 using ElevVPNClassLibrary.Common.Users.Repositories;
 using ElevVPNClassLibrary.Common.Users.Services;
+using ElevVPNClassLibrary.Core.Database.Factories;
 using ElevVPNClassLibrary.Core.Database.Managers;
 using ElevVPNClassLibrary.Security.Cryptography;
 using ElevVPNClassLibrary.Security.Cryptography.Hashing;
@@ -20,6 +21,7 @@ namespace ElevVPNClassLibrary.Extensions.ServiceCollection
 
         public static IServiceCollection AddFactories(this IServiceCollection services)
             => services
+            .AddSingleton<ISqlDbFactory, SqlDbFactory>()
             .AddSingleton<UserEntityFactory>();
 
         public static IServiceCollection AddManagers(this IServiceCollection services)
