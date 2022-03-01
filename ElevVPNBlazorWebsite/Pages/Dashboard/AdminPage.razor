@@ -1,5 +1,57 @@
-﻿<h3>AdminPage</h3>
+﻿@page "/admin/index"
 
-@code {
+<PageDocumentTitle DocumentTitle="Elev Virksomheds Information" />
 
-}
+<div class="page-content">
+    <PageHeadingTitle DisplayTitle="Excel Data:" />
+
+    <MessageAlert Message="@_errorMessage" FullWidth="false" Alert="MessageAlert.AlertType.Error" />
+
+    <MessageAlert Message="@_successMessage" Alert="MessageAlert.AlertType.Success" />
+
+    @if (_isLoadingData)
+    {
+        <MessageAlert Message="Indlæser nødvendig data; vent venligst." Alert="MessageAlert.AlertType.Info" IsLoading="_isLoadingData" />
+    }
+    else
+    {
+        @*@if (!ModelList.Any())
+        {
+            <MessageAlert Alert="MessageAlert.AlertType.Warning"
+                  Message="Der blev ikke fundet nogen data." />
+        }
+        else
+        {
+            <div class="table-responsive table-responsives-sm table-responsive-md">
+                <table class="table table-striped table-hover">
+                    <caption>Liste over excel data...</caption>
+                    <thead class="table">
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">KlasseNavn</th>
+                            <th scope="col">Navn</th>
+                            <th scope="col">Virksomhed</th>
+                            <th scope="col">Virksomhed Tlf</th>
+                            <th scope="col">Virksomhed Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var model in ModelList)
+                        {
+                            <tr id="@model.Id">
+                                <th scope="row">@model.Id</th>
+                                <td>@model.StudentClass</td>
+                                <td>@model.StudentName</td>
+                                <td>@model.CompanyName</td>
+                                <td>@model.CompanyCell</td>
+                                <td>@model.CompanyEmail</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }*@
+    }
+
+</div>
