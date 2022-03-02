@@ -18,7 +18,7 @@
             <InputText @bind-Value="@_loginModel.Password" class="form-control" type="password" placeholder="Password" />
             <ValidationMessage For="@(() => _loginModel.Password)" />
         </div>
-        <button type="submit" class="btn btn-outline-light btn-sm" disabled="@_loginModel.IsProcessing">
+        <button type="submit" class="btn btn-primary" disabled="@_loginModel.IsProcessing">
 
             @if (_loginModel.IsProcessing)
             {

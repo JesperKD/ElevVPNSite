@@ -1,3 +1,4 @@
+using ElevVPNBlazorWebsite.Data.Services;
 using ElevVPNClassLibrary.Core.Database.Managers;
 using ElevVPNClassLibrary.Core.Settings;
 using ElevVPNClassLibrary.Extensions.ServiceCollection;
@@ -41,6 +42,7 @@ namespace ElevVPNBlazorWebsite
             services.AddRepositories();
 
             services.AddEntityServices();
+            services.AddScoped<PaginationService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

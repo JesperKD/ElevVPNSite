@@ -11,7 +11,7 @@
 
         <div class="form-group">
             <label for="inputPassword" class="admin-label">Din ZBC Email:</label>
-            <input id="inputPassword" type="password" class="form-control form-control-sm" placeholder="Indtast Email.." @bind="_requestModel.Email" />
+            <input id="inputPassword" type="text" class="form-control form-control-sm" placeholder="Indtast Email.." @bind="_requestModel.Email" />
             <ValidationMessage For="@(() => _requestModel.Email)" />
         </div>
 
