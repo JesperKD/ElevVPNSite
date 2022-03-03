@@ -1,3 +1,4 @@
+using ElevVPNBlazorWebsite.Data.Providers;
 using ElevVPNBlazorWebsite.Data.Services;
 using ElevVPNClassLibrary.Core.Database.Managers;
 using ElevVPNClassLibrary.Core.Settings;
@@ -42,6 +43,7 @@ namespace ElevVPNBlazorWebsite
             services.AddRepositories();
 
             services.AddEntityServices();
+            services.AddScoped<IRefreshProvider, RefreshProvider>();
             services.AddScoped<PaginationService>();
         }
 
