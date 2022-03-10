@@ -5,6 +5,10 @@
 <div class="page-content p-4">
     <PageHeadingTitle DisplayTitle="Log ind" />
 
+    <MessageAlert Message="@_errorMessage" FullWidth="false" Alert="MessageAlert.AlertType.Error" />
+
+    <MessageAlert Message="@_successMessage" Alert="MessageAlert.AlertType.Success" />
+
     <EditForm Model="_loginModel" OnValidSubmit="OnValidSubmit_LoginAdmin">
         <DataAnnotationsValidator />
 
