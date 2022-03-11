@@ -1,12 +1,24 @@
 ﻿using ElevVPNClassLibrary.Common.Users.Entities;
+using ElevVPNClassLibrary.Common.Users.Factories;
+using ElevVPNClassLibrary.Core.Database.Managers;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ElevVPNClassLibrary.Common.Users.Repositories
 {
-    internal class UserRepository : IUserRepository
+    public class UserRepository : IUserRepository
     {
+        private readonly ISqlDbManager _sqlDbManager;
+        private readonly UserEntityFactory _factory;
+
+        public UserRepository(ISqlDbManager sqlDbManager, UserEntityFactory factory)
+        {
+            _sqlDbManager = sqlDbManager;
+            _factory = factory;
+        }
+
+
         public Task<IUser> CreateAsync(IUser entity)
         {
             throw new NotImplementedException();
