@@ -1,7 +1,9 @@
+using ElevVPNClassLibrary.Common.Users.Entities;
 using ElevVPNClassLibrary.Common.Users.Factories;
 using ElevVPNClassLibrary.Common.Users.Repositories;
 using ElevVpnTestLibrary.Setup;
 using NUnit.Framework;
+using System.Threading.Tasks;
 
 namespace ElevVpnTestLibrary
 {
@@ -17,9 +19,23 @@ namespace ElevVpnTestLibrary
         }
 
         [Test]
-        public void Test1()
+        [Order(0)]
+        public async Task GetAllAsync_HasData_IfCollectionIsNotNull()
         {
-            Assert.Pass();
+            // Arrange
+            IUser firstUser;
+
+            // Act
+            var users = await _userRepository.GetAllSystemLogsAsync();
+            firstUser = users[0];
+
+            // Assert
+            Assert.IsNotNull(users);
+            Assert.IsNotEmpty(users);
+            Assert.IsNotNull(firstUser);
+            Assert.AreNotEqual(0, firstUser.Id);
+            Assert.IsNotNull(firstUser.Email);
+            Assert.IsNotEmpty(firstUser.Email);
         }
     }
 }
