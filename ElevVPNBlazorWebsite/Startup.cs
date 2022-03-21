@@ -3,8 +3,6 @@ using ElevVPNBlazorWebsite.Data.Services;
 using ElevVPNClassLibrary.Core.Database.Managers;
 using ElevVPNClassLibrary.Core.Settings;
 using ElevVPNClassLibrary.Extensions.ServiceCollection;
-using ElevVPNClassLibrary.Security.Cryptography;
-using ElevVPNClassLibrary.Security.Cryptography.Hashing;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
