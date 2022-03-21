@@ -39,7 +39,7 @@ namespace ElevVPNClassLibrary.Common.Users.Repositories
                     {
                         cmd.CommandType = CommandType.Text;
                         cmd.CommandTimeout = 300;
-                        cmd.CommandText = "SELECT * FROM Users";
+                        cmd.CommandText = "SELECT * FROM Elever";
 
                         object objValue = cmd.ExecuteScalar();
                         if (objValue == null)
@@ -51,6 +51,7 @@ namespace ElevVPNClassLibrary.Common.Users.Repositories
                         else
                         {
                             strData = (string)cmd.ExecuteScalar();
+                            Console.WriteLine();
                             cmd.Dispose();
                         }
 
