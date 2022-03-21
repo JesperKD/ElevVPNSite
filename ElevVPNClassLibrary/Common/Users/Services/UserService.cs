@@ -7,7 +7,7 @@ namespace ElevVPNClassLibrary.Common.Users.Services
 {
     public class UserService : IUserService
     {
-        public Task<IAuthUser> AuthenticateUserLoginAsync(string email, string password)
+        public Task<bool> AuthenticateUserLoginAsync(string email, string password)
         {
             throw new NotImplementedException();
         }
@@ -28,11 +28,6 @@ namespace ElevVPNClassLibrary.Common.Users.Services
         }
 
         public Task<string> GetSaltByEmailAddressAsync(string email)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IAuthUser> GetUserByAccessTokenAsync(string accessToken)
         {
             throw new NotImplementedException();
         }
@@ -67,7 +62,7 @@ namespace ElevVPNClassLibrary.Common.Users.Services
             throw new NotImplementedException();
         }
 
-        public Task<bool> UpdateUserPasswordAsync(IAuthUser user)
+        public Task<bool> UpdateUserPasswordAsync(IUser user)
         {
             throw new NotImplementedException();
         }

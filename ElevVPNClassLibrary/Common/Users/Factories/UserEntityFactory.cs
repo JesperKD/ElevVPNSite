@@ -20,12 +20,6 @@ namespace ElevVPNClassLibrary.Common.Users.Factories
                 Email = ParseValue<string>(entityValues[1]),
                 Password = ParseValue<string>(entityValues[2])
             },
-            nameof(HashedUser) => new Admin
-            {
-                Id = ParseValue<int>(entityValues[0]),
-                Password = ParseValue<string>(entityValues[1]),
-                Salt = ParseValue<string>(entityValues[2])
-            },
             _ => throw new ArgumentOutOfRangeException(nameof(paramName), paramName, "Coudln't create type. Out of range.")
         };
     }

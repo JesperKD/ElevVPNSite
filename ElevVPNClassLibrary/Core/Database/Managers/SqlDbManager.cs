@@ -1,5 +1,5 @@
 ﻿using ElevVPNClassLibrary.Core.Database.Factories;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace ElevVPNClassLibrary.Core.Database.Managers
 {
@@ -12,7 +12,7 @@ namespace ElevVPNClassLibrary.Core.Database.Managers
             _factory = factory;
         }
 
-        public SqlConnection GetSqlConnection()
+        public MySqlConnection GetSqlConnection()
         {
             return _factory.CreateConnection("username", "Pa$$w0rd");
         }

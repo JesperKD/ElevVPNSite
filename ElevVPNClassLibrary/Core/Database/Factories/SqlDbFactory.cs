@@ -1,5 +1,5 @@
 ﻿using ElevVPNClassLibrary.Core.Settings;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Text;
 
 namespace ElevVPNClassLibrary.Core.Database.Factories
@@ -13,10 +13,10 @@ namespace ElevVPNClassLibrary.Core.Database.Factories
             _connectionSettings = connectionSettings;
         }
 
-        public SqlConnection CreateConnection(string username, string password)
+        public MySqlConnection CreateConnection(string username, string password)
         {
             var connStr = CreateConnectionString(username, password);
-            var sqlConn = new SqlConnection(connStr);
+            var sqlConn = new MySqlConnection(connStr);
             return sqlConn;
         }
 

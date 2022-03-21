@@ -1,6 +1,6 @@
 ﻿namespace ElevVPNClassLibrary.Common.Users.Entities
 {
-    public class Admin : IUser, IAuthUser
+    public class Admin : IUser
     {
         public int Id { get; set; }
         public string Email { get; set; }

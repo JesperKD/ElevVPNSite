@@ -3,8 +3,6 @@ using ElevVPNClassLibrary.Common.Users.Repositories;
 using ElevVPNClassLibrary.Common.Users.Services;
 using ElevVPNClassLibrary.Core.Database.Factories;
 using ElevVPNClassLibrary.Core.Database.Managers;
-using ElevVPNClassLibrary.Security.Cryptography;
-using ElevVPNClassLibrary.Security.Cryptography.Hashing;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ElevVPNClassLibrary.Extensions.ServiceCollection
@@ -26,7 +24,6 @@ namespace ElevVPNClassLibrary.Extensions.ServiceCollection
 
         public static IServiceCollection AddManagers(this IServiceCollection services)
             => services
-           .AddSingleton<ISqlDbManager, SqlDbManager>()
-           .AddTransient<ICryptographyService, HashingService>();
+           .AddSingleton<ISqlDbManager, SqlDbManager>();
     }
 }

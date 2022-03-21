@@ -1,9 +1,9 @@
-﻿using System.Data.SqlClient;
+﻿using MySql.Data.MySqlClient;
 
 namespace ElevVPNClassLibrary.Core.Database.Factories
 {
     public interface ISqlDbFactory
     {
-        SqlConnection CreateConnection(string username, string password);
+        MySqlConnection CreateConnection(string username, string password);
     }
 }

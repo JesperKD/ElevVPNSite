@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace ElevVPNClassLibrary.Common.Users.Services
 {
-    public interface IUserService : IAuthUserService
+    public interface IUserService
     {
         Task<List<IUser>> GetUsersAsync();
 
