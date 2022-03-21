@@ -73,5 +73,78 @@ namespace ElevVpnTestLibrary
             };
             return expected;
         }
+
+        [Test]
+        [Order(2)]
+        public async Task GetByIdAsync_ReturnsAValidObject_IfArgumentIsValid()
+        {
+            //Arrange
+            IUser testArea;
+            IUser requestedArea;
+
+            testArea = await _userRepository.CreateAsync(CreateTestAreaObject());
+
+            //Act
+            requestedArea = await _userRepository.GetByIdAsync(testArea.Id);
+
+            //cleanup
+            bool cleanUpAreaTest = await _userRepository.RemoveAsync(requestedArea);
+
+            //Assert
+            Assert.IsNotNull(requestedArea);
+            Assert.IsNotNull(requestedArea.Id);
+            Assert.AreNotEqual(0, requestedArea.Id);
+            Assert.AreEqual(testArea.Email, requestedArea.Email);
+            Assert.IsTrue(cleanUpAreaTest);
+        }
+
+
+        [Test]
+        [Order(3)]
+        public async Task UpdateAsync_UpdatesExistingObject_IfArgumentsIsValid()
+        {
+            //Arrange
+            IUser testArea;
+            IUser newArea;
+            IUser updatedArea;
+
+            testArea = await _userRepository.CreateAsync(CreateTestAreaObject());
+
+            //Act
+            newArea = new User
+            {
+                Id = testArea.Id,
+                Email = CreateTestAreaObject().Email
+            };
+
+            updatedArea = await _userRepository.UpdateAsync(newArea);
+
+            //Cleanup
+            bool cleanUpAreaTest = await _userRepository.RemoveAsync(updatedArea);
+
+            //Assert
+            Assert.IsNotNull(updatedArea);
+            Assert.IsNotNull(updatedArea.Email);
+            Assert.AreEqual(newArea.Email, updatedArea.Email);
+            Assert.IsTrue(cleanUpAreaTest);
+        }
+
+
+        [Test]
+        [Order(4)]
+        public async Task RemoveArea_ShouldRemoveArea()
+        {
+            //Arrange
+            IUser testArea;
+            testArea = await _userRepository.CreateAsync(CreateTestAreaObject());
+
+            //Act
+            bool cleanupSuccess = await _userRepository.RemoveAsync(testArea);
+
+            //Assert
+            Assert.IsTrue(cleanupSuccess);
+        }
+
+
     }
 }
