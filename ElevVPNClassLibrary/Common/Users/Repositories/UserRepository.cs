@@ -24,7 +24,7 @@ namespace ElevVPNClassLibrary.Common.Users.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<List<IUser>> GetAllSystemLogsAsync()
+        public Task<List<IUser>> GetAllAsync()
         {
             throw new NotImplementedException();
         }

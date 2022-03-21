@@ -26,7 +26,7 @@ namespace ElevVpnTestLibrary
             IUser firstUser;
 
             // Act
-            var users = await _userRepository.GetAllSystemLogsAsync();
+            var users = await _userRepository.GetAllAsync();
             firstUser = users[0];
 
             // Assert
