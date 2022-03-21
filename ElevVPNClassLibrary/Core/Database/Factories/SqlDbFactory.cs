@@ -13,20 +13,20 @@ namespace ElevVPNClassLibrary.Core.Database.Factories
             _connectionSettings = connectionSettings;
         }
 
-        public MySqlConnection CreateConnection(string username, string password)
+        public MySqlConnection CreateConnection()
         {
-            var connStr = CreateConnectionString(username, password);
+            var connStr = CreateConnectionString();
             var sqlConn = new MySqlConnection(connStr);
             return sqlConn;
         }
 
-        private string CreateConnectionString(string username, string password)
+        private string CreateConnectionString()
         {
             var sb = new StringBuilder();
             sb.Append($"Server={_connectionSettings.ServerHost};");
             sb.Append($"Database={_connectionSettings.Database};");
-            sb.Append($"User Id={username};");
-            sb.Append($"Password={password};");
+            sb.Append($"User Id={_connectionSettings.Username};");
+            sb.Append($"Password={_connectionSettings.Password};");
 
             return sb.ToString();
         }

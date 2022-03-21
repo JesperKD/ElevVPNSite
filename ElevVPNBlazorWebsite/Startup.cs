@@ -34,7 +34,6 @@ namespace ElevVPNBlazorWebsite
             services.AddFactories();
 
             services.AddSingleton<ISqlDbManager, SqlDbManager>();
-            //services.AddTransient<ICryptographyService, HashingService>();
 
             services.AddManagers();
 

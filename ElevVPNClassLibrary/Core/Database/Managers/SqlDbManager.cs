@@ -14,7 +14,7 @@ namespace ElevVPNClassLibrary.Core.Database.Managers
 
         public MySqlConnection GetSqlConnection()
         {
-            return _factory.CreateConnection("username", "Pa$$w0rd");
+            return _factory.CreateConnection();
         }
     }
 }

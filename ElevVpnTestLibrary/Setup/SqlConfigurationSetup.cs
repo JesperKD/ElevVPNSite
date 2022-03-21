@@ -12,8 +12,10 @@ namespace ElevVpnTestLibrary.Setup
         {
             var inMemorySettings = new Dictionary<string, string>
             {
-                {"ServerHost", "172.18.5.23" },
-                {"Database", "EmailDB" }
+                {"ServerHost", "172.18.5.25" },
+                {"Database", "EmailDB" },
+                { "Username", "data@database"},
+                { "Password", "4Ndet0wn"}
             };
 
             IConfiguration config = new ConfigurationBuilder()
