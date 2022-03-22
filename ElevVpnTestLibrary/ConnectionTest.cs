@@ -27,10 +27,13 @@ namespace ElevVpnTestLibrary
                 {
                     await mysqlconnection.OpenAsync();
                     couldConnect = true;
+                    await mysqlconnection.CloseAsync();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     couldConnect = false;
+                    Console.WriteLine(ex.Message);
+                    Console.WriteLine();
                 }
             }
 

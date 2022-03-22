@@ -25,8 +25,10 @@ namespace ElevVPNClassLibrary.Core.Database.Factories
             var sb = new StringBuilder();
             sb.Append($"Server={_connectionSettings.ServerHost};");
             sb.Append($"Database={_connectionSettings.Database};");
-            sb.Append($"User Id={_connectionSettings.Username};");
-            sb.Append($"Password={_connectionSettings.Password};");
+            sb.Append($"Uid={_connectionSettings.Username};");
+            //sb.Append($"User Id={_connectionSettings.Username};");
+            sb.Append($"Pwd={_connectionSettings.Password};");
+            //sb.Append($"Password={_connectionSettings.Password};");
 
             return sb.ToString();
         }
