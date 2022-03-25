@@ -8,7 +8,7 @@ namespace ElevVPNBlazorWebsite.Pages.Dashboard
 {
     public partial class LoginPage
     {
-        [Inject] protected UserService UserService { get; set; }
+        [Inject] protected IUserService UserService { get; set; }
         private readonly LoginModel _loginModel = new();
 
         private string _errorMessage = string.Empty;

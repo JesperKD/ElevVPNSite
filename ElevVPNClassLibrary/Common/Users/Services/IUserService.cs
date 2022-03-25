@@ -6,6 +6,8 @@ namespace ElevVPNClassLibrary.Common.Users.Services
 {
     public interface IUserService
     {
+        Task<bool> AuthenticateUserLoginAsync(string email, string password);
+
         Task<List<IUser>> GetUsersAsync();
 
         Task<IUser> CreateAsync(IUser entity);

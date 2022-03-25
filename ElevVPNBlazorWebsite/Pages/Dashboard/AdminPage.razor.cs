@@ -10,7 +10,7 @@ namespace ElevVPNBlazorWebsite.Pages.Dashboard
     {
         [Inject] protected IUserService UserService { get; set; }
 
-        private IEnumerable<IUser> _users;
+        private IEnumerable<IUser> _users = new List<User>();
 
         private int _requestId;
         private bool _isLoadingData = false;
@@ -20,7 +20,8 @@ namespace ElevVPNBlazorWebsite.Pages.Dashboard
 
         protected override async Task OnInitializedAsync()
         {
-            await LoadDataAsync();
+            //await LoadDataAsync();
+            await Task.CompletedTask;
         }
 
         private async Task LoadDataAsync()
