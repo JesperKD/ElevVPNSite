@@ -45,7 +45,6 @@ namespace ElevVPNClassLibrary.Common.Users.Repositories
                         if (objValue == null)
                         {
                             cmd.Dispose();
-
                             return null;
                         }
                         else
@@ -71,7 +70,44 @@ namespace ElevVPNClassLibrary.Common.Users.Repositories
 
         public Task<IUser> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var mysqlconnection = _sqlDbManager.GetSqlConnection())
+                {
+                    string strData = string.Empty;
+
+                    mysqlconnection.Open();
+                    using (MySqlCommand cmd = mysqlconnection.CreateCommand())
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandTimeout = 300;
+                        cmd.CommandText = $"SELECT * FROM Elever WHERE [Id] == {id}";
+
+                        object objValue = cmd.ExecuteScalar();
+                        if (objValue == null)
+                        {
+                            cmd.Dispose();
+                            return null;
+                        }
+                        else
+                        {
+                            strData = (string)cmd.ExecuteScalar();
+                            Console.WriteLine();
+                            cmd.Dispose();
+                        }
+
+                        mysqlconnection.Close();
+
+                        return null;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
         }
 
         public Task<bool> RemoveAsync(IUser entity)
